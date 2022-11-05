@@ -21,7 +21,7 @@ async function bootstrap() {
   // .env
   await fastify.register(jwt, {
     secret: `${process.env.API_SECRET}`,
-  });
+  })
 
   await fastify.register(poolRoutes)
   await fastify.register(authRoutes);
@@ -31,7 +31,7 @@ async function bootstrap() {
   
   
 
-  await fastify.listen({ port: 3333, /*host: '0.0.0.0'*/})
+  await fastify.listen({ port: 0, host: '0.0.0.0'})
 }
 
 bootstrap()
